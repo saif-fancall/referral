@@ -3,6 +3,7 @@ const express = require("express");
 const serverless = require("serverless-http");
 const axios = require("axios");
 const morgan = require("morgan");
+const { log } = require("console");
 require("dotenv").config();
 
 const app = express();
@@ -39,6 +40,7 @@ app.get("/", async (req, res) => {
       'https://fancall-static-public.s3.ap-south-1.amazonaws.com/FanCall//fan/profile/1753277436594_upload_1753277419425.jpg';
 
     const html = getHtml({ link, og_image, og_title, og_type, og_url });
+    console.log("html", html);
     return res.set('Content-Type', 'text/html').send(html);
 
   } catch (error) {
