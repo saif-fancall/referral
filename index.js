@@ -241,10 +241,11 @@ app.get("/", async (req, res) => {
       process.env.DEFAULT_PROFILE_IMAGE;
 
     const html = getHtml({ link, og_image, og_title, og_type, og_url });
-    return res.send(html);
+    return res.set('Content-Type', 'text/html').send(html);
+
   } catch (error) {
     console.error("error is ", error);
-    return res.send(getHtml({}));
+    return res.set('Content-Type', 'text/html').send(getHtml({}));
   }
 });
 
