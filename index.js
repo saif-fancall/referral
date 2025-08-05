@@ -7,7 +7,7 @@ const { log } = require("console");
 require("dotenv").config();
 
 const app = express();
-const API_URL = 'https://gentle-shirts-call.loca.lt/api/api/v1/';
+const API_URL = 'https://bright-yaks-type.loca.lt/api/api/v1/';
 const DEFAULT_FALLBACK_LINK = 'https://fancall.in';
 
 console.log("API_URL", API_URL);
